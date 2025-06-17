@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Journey Mapping</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1><i class="fas fa-chart-line"></i> Customer Journey Mapping</h1>
+                <p>Mapea el journey completo de tus usuarios</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <form id="customerJourneyForm" class="journey-form">
+                <!-- Información del Proyecto -->
+                <section class="form-section">
+                    <h2><i class="fas fa-info-circle"></i> Información del Proyecto</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="proyecto">Proyecto:</label>
+                            <input type="text" id="proyecto" name="proyecto" placeholder="Nombre del proyecto">
+                        </div>
+                        <div class="form-group">
+                            <label for="fecha">Fecha:</label>
+                            <input type="date" id="fecha" name="fecha">
+                        </div>
+                        <div class="form-group">
+                            <label for="equipo">Equipo:</label>
+                            <input type="text" id="equipo" name="equipo" placeholder="Miembros del equipo">
+                        </div>
+                        <div class="form-group">
+                            <label for="version">Versión:</label>
+                            <input type="text" id="version" name="version" placeholder="v1.0">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Persona Objetivo -->
+                <section class="form-section">
+                    <h2><i class="fas fa-user"></i> Persona Objetivo</h2>
+                    <h3>Información Básica</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Nombre de la persona">
+                        </div>
+                        <div class="form-group">
+                            <label for="edad">Edad:</label>
+                            <input type="number" id="edad" name="edad" placeholder="Edad">
+                        </div>
+                        <div class="form-group">
+                            <label for="ocupacion">Ocupación:</label>
+                            <input type="text" id="ocupacion" name="ocupacion" placeholder="Ocupación">
+                        </div>
+                        <div class="form-group">
+                            <label for="ubicacion">Ubicación:</label>
+                            <input type="text" id="ubicacion" name="ubicacion" placeholder="Ciudad, País">
+                        </div>
+                    </div>
+
+                    <h3>Contexto</h3>
+                    <div class="form-group">
+                        <label for="objetivo">Objetivo principal:</label>
+                        <textarea id="objetivo" name="objetivo" placeholder="¿Qué quiere lograr?"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="motivacion">Motivación clave:</label>
+                        <textarea id="motivacion" name="motivacion" placeholder="¿Qué lo motiva?"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Nivel de experiencia:</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="experiencia" value="principiante"> Principiante</label>
+                            <label><input type="radio" name="experiencia" value="intermedio"> Intermedio</label>
+                            <label><input type="radio" name="experiencia" value="avanzado"> Avanzado</label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Mapa del Journey -->
+                <section class="form-section">
+                    <h2><i class="fas fa-map"></i> Mapa del Journey</h2>
+                    <div class="form-group">
+                        <label for="duracion">Duración total estimada:</label>
+                        <input type="text" id="duracion" name="duracion" placeholder="ej. 30 días">
+                    </div>
+                    <div class="form-group">
+                        <label>Canales involucrados:</label>
+                        <div class="checkbox-grid">
+                            <label><input type="checkbox" name="canales" value="sitio-web"> Sitio web</label>
+                            <label><input type="checkbox" name="canales" value="app-movil"> App móvil</label>
+                            <label><input type="checkbox" name="canales" value="redes-sociales"> Redes sociales</label>
+                            <label><input type="checkbox" name="canales" value="email"> Email</label>
+                            <label><input type="checkbox" name="canales" value="telefono"> Teléfono</label>
+                            <label><input type="checkbox" name="canales" value="presencial"> Presencial</label>
+                            <label><input type="checkbox" name="canales" value="chat"> Chat/Soporte</label>
+                            <label><input type="checkbox" name="canales" value="otros"> Otros</label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Etapas del Journey -->
+                <section class="form-section">
+                    <h2><i class="fas fa-route"></i> Etapas del Journey</h2>
+                    <div id="etapasContainer">
+                        <!-- Las etapas se generarán dinámicamente con JavaScript -->
+                    </div>
+                </section>
+
+                <!-- Análisis Transversal -->
+                <section class="form-section">
+                    <h2><i class="fas fa-analytics"></i> Análisis Transversal</h2>
+                    <div class="analysis-section">
+                        <h3>Momentos de la Verdad</h3>
+                        <p>Identificar los momentos más críticos del journey</p>
+                        <div id="momentosCriticos">
+                            <div class="momento-item">
+                                <input type="text" placeholder="Momento" name="momento">
+                                <select name="etapa-momento">
+                                    <option value="">Seleccionar etapa</option>
+                                    <option value="awareness">Awareness</option>
+                                    <option value="consideration">Consideration</option>
+                                    <option value="decision">Decision</option>
+                                    <option value="purchase">Purchase/Onboarding</option>
+                                    <option value="usage">Usage</option>
+                                    <option value="advocacy">Advocacy</option>
+                                </select>
+                                <select name="impacto">
+                                    <option value="">Impacto</option>
+                                    <option value="alto">Alto</option>
+                                    <option value="medio">Medio</option>
+                                    <option value="bajo">Bajo</option>
+                                </select>
+                                <input type="text" placeholder="Acción Requerida" name="accion">
+                            </div>
+                        </div>
+                        <button type="button" class="btn-add" onclick="addMomento()">+ Agregar Momento</button>
+                    </div>
+                </section>
+
+                <!-- Botones de Acción -->
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Guardar Journey Map</button>
+                    <button type="button" class="btn-secondary" onclick="exportData()">Exportar Datos</button>
+                    <button type="reset" class="btn-tertiary">Limpiar Formulario</button>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
